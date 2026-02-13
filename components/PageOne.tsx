@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Position } from '../types';
+import backgroundVideo from '../assets/background.mp4';
+import circle from '../assets/circle.png';
+import arrow from '../assets/arrow.png';
 
 interface PageOneProps {
   onYesClick: () => void;
@@ -56,7 +59,7 @@ const PageOne: React.FC<PageOneProps> = ({ onYesClick, isActive }) => {
             setVideoError(true);
           }}
         >
-            <source src="./assets/background.mp4" type="video/mp4" />
+            <source src={backgroundVideo} type="video/mp4" />
         </video>
       ) : (
         // Fallback gradient if video is missing
@@ -72,7 +75,7 @@ const PageOne: React.FC<PageOneProps> = ({ onYesClick, isActive }) => {
         {/* Transparent Texture Centered on Yes Button */}
         {/* Using pointer-events-none so it doesn't interfere with clicking the button */}
         <img 
-            src="./assets/circle.png" 
+            src={circle} 
             alt="" 
             className="absolute pointer-events-none select-none"
             style={{
@@ -84,7 +87,7 @@ const PageOne: React.FC<PageOneProps> = ({ onYesClick, isActive }) => {
             }}
         />
           <img 
-        src="./assets/arrow.png" 
+        src={arrow} 
         alt="arrow"
         className="absolute"
         style={{

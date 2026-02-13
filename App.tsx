@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import PageOne from './components/PageOne';
 import PageTwo from './components/PageTwo';
 import HeartConfetti from './components/HeartConfetti';
+import audio1 from "./assets/audio1.mp3";
+import audio2 from './assets/audio2.mp3';
 
 const App: React.FC = () => {
   const [showPageTwo, setShowPageTwo] = useState(false);
@@ -121,10 +123,10 @@ const App: React.FC = () => {
     <div className="fixed inset-0 bg-black flex items-center justify-center overflow-hidden touch-none">
         {/* Audio Elements with explicit source and type */}
         <audio ref={audio1Ref} loop>
-            <source src="./assets/audio1.mp3" type="audio/mpeg" />
+            <source src={audio1} type="audio/mpeg" />
         </audio>
         <audio ref={audio2Ref} loop>
-            <source src="./assets/audio2.mp3" type="audio/mpeg" />
+            <source src={audio2} type="audio/mpeg" />
         </audio>
 
         {/* Main Scaled Container */}
